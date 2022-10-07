@@ -3,6 +3,8 @@ name: Build Wheels YAay
 on: [push, pull_request]
 
 jobs:
+  Git Clone repo:
+  runs-on: ubuntu-latest
   steps:
     - run: git clone https://github.com/SpotlightKid/python-rtmidi.git
 
