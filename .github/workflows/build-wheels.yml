@@ -11,6 +11,7 @@ jobs:
         with:
           name:  https://github.com/SpotlightKid/python-rtmidi.git
           repository: SpotlightKid/python-rtmidi
+          submodules: recursive
           # /home/runner/work/sardine/sardine
           path: ./python-rtmidi
       - name: Install cibuildwheel
