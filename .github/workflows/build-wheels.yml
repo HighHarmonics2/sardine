@@ -24,7 +24,8 @@ jobs:
         run : cd python-rtmidi && pip install Cython && python -m cibuildwheel --output-dir wheelhouse
         # to supply options, put them in 'env', like:
         env:
-          CIBW_BEFORE_BUILD: pip install Cython && sudo apt-get update && sudo apt-get install -y libc6-dev
+          CIBW_BEFORE_BUILD: pip install Cython
+          CIBW_ARCHS_LINUX: auto64 aarch64
           CIBW_BUILD: cp310-* cp39-* 
           CIBW_SKIP: pp* cp39-musllinux* cp10-musllinux* 
       - uses: actions/upload-artifact@v3
