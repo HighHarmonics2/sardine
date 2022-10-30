@@ -1,7 +1,13 @@
 import random
-from .Utilities import zip_cycle, map_unary_function, map_binary_function
+from .Utilities import (
+        zip_cycle, 
+        map_unary_function, 
+        map_binary_function)
 from itertools import cycle
-from math import cos, sin, tan
+from math import (
+        cos, 
+        sin, 
+        tan)
 from typing import Union
 
 

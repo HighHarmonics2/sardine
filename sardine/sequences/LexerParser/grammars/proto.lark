@@ -50,8 +50,9 @@ pattern: sum ("," sum?)* -> return_pattern
      | "{" sum "," sum "," sum  "}"                        -> generate_ramp_with_range
      | "[" sum ("," sum)* ","? "]"                         -> make_list
      | SILENCE+                                            -> silence
-     | "(" sum ")"
      | NAME "(" sum ("," sum)* ")"                         -> function_call
+     | "<" sum ("," sum)* ","? ">"                         -> chordify
+     | "(" sum ")"
 
 
 ///////////////////////////////////////////////////////////////////////////////

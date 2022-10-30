@@ -10,7 +10,6 @@ from .SenderLogic import pattern_element, compose_parametric_patterns
 if TYPE_CHECKING:
     from ..clock import Clock
 
-
 class SuperDirtSender:
     def __init__(
         self,

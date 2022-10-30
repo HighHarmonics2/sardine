@@ -3,6 +3,7 @@ from typing import Union
 from .Qualifiers import qualifiers
 from .Utilities import zip_cycle, map_unary_function, map_binary_function
 from . import FuncLibrary
+from .Chord import Chord
 from lark.lexer import Token
 from typing import Any
 from itertools import cycle, takewhile, count
@@ -11,7 +12,6 @@ import datetime
 import random
 from rich import print
 from rich.panel import Panel
-
 
 @v_args(inline=True)
 class CalculateTree(Transformer):
@@ -30,6 +30,20 @@ class CalculateTree(Transformer):
 
     def return_pattern(self, *args):
         return list(args)
+
+
+    # ---------------------------------------------------------------------- #
+    # Chords: handling chords
+    # ---------------------------------------------------------------------- #
+
+    def chordify(self, *args) -> Chord:
+        """Make a chord
+
+        Returns:
+            chord: Chord
+        """
+        return Chord(elements=sum(args, start=[]), root=None)
+
 
     # ---------------------------------------------------------------------- #
     # Silence: handling silence
